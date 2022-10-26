@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:mova/src/onboarding/screens/onboarding.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:mova/src/onboarding_login_signup/screens/onboarding.dart';
 
-void main() {
+Future main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  initialization();
   runApp(const Mova());
+}
+
+Future initialization() async {
+  //Load resources
+  await Future.delayed(const Duration(seconds: 3));
+  FlutterNativeSplash.remove();
 }
 
 class Mova extends StatelessWidget {

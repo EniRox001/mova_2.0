@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mova/src/onboarding/widgets/onboarding_widgets.dart';
-import 'package:mova/src/onboarding/view_model/onboarding_viewmodel.dart';
+import 'package:mova/src/onboarding_login_signup/screens/signin_main.dart';
+import 'package:mova/src/onboarding_login_signup/widgets/onboarding_signup_widgets.dart';
+import 'package:mova/src/onboarding_login_signup/view_model/onboarding_viewmodel.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -48,7 +49,12 @@ class _OnboardingState extends State<Onboarding> {
             title: Strings().titleThree,
             text: Strings().textThree,
             onPressed: () {
-              print('go to login page');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SignupMain(),
+                ),
+              );
             },
             buttonText: Strings().buttonTextThree,
           ),
