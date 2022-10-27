@@ -25,3 +25,15 @@ class SignUpMainStrings {
   static const String altTextOneString = 'Don\'t have an account ';
   static const String altTextTwoString = 'Sign up';
 }
+
+class SignUpStrings {
+  SignUpStrings._();
+  static const String createString = 'Create Your Account';
+  static const String emailHintString = 'Email';
+  static const String passwordString = 'Password';
+  static const String rememberString = 'Remember Me';
+  static const String buttonString = 'Sign up';
+  static const String dividerString = 'or continue with';
+  static const String altTextOneString = 'Already have an account? ';
+  static const String altTextTwoString = 'Sign in';
+}

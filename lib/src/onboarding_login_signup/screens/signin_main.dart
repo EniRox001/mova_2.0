@@ -26,28 +26,28 @@ class _SignupMainState extends State<SignupMain> {
           children: [
             Center(
               child: Image.asset(
-                SignUpImages.logo,
+                ButtonImages.logo,
                 fit: BoxFit.cover,
                 width: MediaQuery.of(context).size.width / 3,
               ),
             ),
             Text(
               SignUpMainStrings.startedString,
-              style: Theme.of(context).textTheme.headline3,
+              style: Theme.of(context).textTheme.headline4,
               textAlign: TextAlign.center,
             ),
             WLogButton(
-              icon: SignUpImages.fbIcon,
+              icon: ButtonImages.fbIcon,
               text: SignUpMainStrings.fbButtonString,
               onPressed: () {},
             ),
             WLogButton(
-              icon: SignUpImages.googleIcon,
+              icon: ButtonImages.googleIcon,
               text: SignUpMainStrings.googleButtonString,
               onPressed: () {},
             ),
             WLogButton(
-              icon: SignUpImages.appleIcon,
+              icon: ButtonImages.appleIcon,
               text: SignUpMainStrings.appleButtonString,
               onPressed: () {},
             ),

@@ -5,10 +5,15 @@ class OnboardingImages {
   static const imageThree = 'assets/images/onboarding_image_three.jpg';
 }
 
-class SignUpImages {
-  SignUpImages._();
+class ButtonImages {
+  ButtonImages._();
   static const logo = 'assets/images/logo_two.png';
   static const fbIcon = 'assets/icons/fb_icon.png';
   static const googleIcon = 'assets/icons/google_logo.png';
   static const appleIcon = 'assets/icons/apple_logo.png';
+}
+
+class SignupImages {
+  SignupImages._();
+  static const mainImage = 'assets/images/logo.png';
 }
