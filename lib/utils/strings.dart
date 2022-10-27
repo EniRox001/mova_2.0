@@ -20,6 +20,7 @@ class SignUpMainStrings {
   static const String fbButtonString = 'Continue with Facebook';
   static const String googleButtonString = 'Continue with Google';
   static const String appleButtonString = 'Continue with Apple';
+  static const String dividerTextString = 'or';
   static const String buttonString = 'Sign in with Password';
   static const String altTextOneString = 'Don\'t have an account ';
   static const String altTextTwoString = 'Sign up';

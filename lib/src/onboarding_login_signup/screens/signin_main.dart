@@ -3,7 +3,9 @@ import 'package:mova/src/onboarding_login_signup/screens/signup.dart';
 import 'package:mova/src/onboarding_login_signup/widgets/onboarding_signup_widgets.dart';
 import 'package:mova/utils/images.dart';
 import 'package:mova/utils/navigators.dart';
+import 'package:mova/utils/spacings.dart';
 import 'package:mova/utils/strings.dart';
+import 'package:mova/src/onboarding_login_signup/widgets/signup_widgets.dart';
 
 class SignupMain extends StatefulWidget {
   const SignupMain({super.key});
@@ -16,16 +18,9 @@ class _SignupMainState extends State<SignupMain> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
-        ),
-      ),
+      appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(32.0),
+        padding: Pad.padLarge,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -36,12 +31,9 @@ class _SignupMainState extends State<SignupMain> {
                 width: MediaQuery.of(context).size.width / 3,
               ),
             ),
-            const Text(
+            Text(
               SignUpMainStrings.startedString,
-              style: TextStyle(
-                fontSize: 42.0,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.headline3,
               textAlign: TextAlign.center,
             ),
             WLogButton(
@@ -59,7 +51,9 @@ class _SignupMainState extends State<SignupMain> {
               text: SignUpMainStrings.appleButtonString,
               onPressed: () {},
             ),
-            const WDivider(),
+            const WDivider(
+              text: SignUpMainStrings.dividerTextString,
+            ),
             WLargeButton(
               onPressed: () {},
               buttonText: SignUpMainStrings.buttonString,

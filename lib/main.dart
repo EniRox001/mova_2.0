@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:mova/src/onboarding_login_signup/screens/onboarding.dart';
+import 'package:mova/utils/colors.dart';
 
 Future main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +22,18 @@ class Mova extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor: CustomColors.mainDarkColor,
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          backgroundColor: CustomColors.mainDarkColor,
+          foregroundColor: CustomColors.mainLightColor,
+          iconTheme: IconThemeData(
+            color: CustomColors.mainLightColor,
+          ),
+        ),
+        textTheme: ThemeData.dark().textTheme,
+      ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/onboarding',
       routes: {'/onboarding': (context) => const Onboarding()},
