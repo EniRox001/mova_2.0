@@ -28,26 +28,26 @@ class _OnboardingState extends State<Onboarding> {
           OnboardingWidget(
             controller: controller,
             image: onboardingImages[0],
-            title: Strings().titleOne,
-            text: Strings().textOne,
+            title: OnboardingStrings.titleOne,
+            text: OnboardingStrings.textOne,
             onPressed: () => toNextPage(controller),
-            buttonText: Strings().buttonTextOne,
+            buttonText: OnboardingStrings.buttonTextOne,
           ),
           OnboardingWidget(
             controller: controller,
             image: onboardingImages[1],
-            title: Strings().titleTwo,
-            text: Strings().textTwo,
+            title: OnboardingStrings.titleTwo,
+            text: OnboardingStrings.textTwo,
             onPressed: () {
               toNextPage(controller);
             },
-            buttonText: Strings().buttonTextTwo,
+            buttonText: OnboardingStrings.buttonTextTwo,
           ),
           OnboardingWidget(
             controller: controller,
             image: onboardingImages[2],
-            title: Strings().titleThree,
-            text: Strings().textThree,
+            title: OnboardingStrings.titleThree,
+            text: OnboardingStrings.textThree,
             onPressed: () {
               Navigator.push(
                 context,
@@ -56,7 +56,7 @@ class _OnboardingState extends State<Onboarding> {
                 ),
               );
             },
-            buttonText: Strings().buttonTextThree,
+            buttonText: OnboardingStrings.buttonTextThree,
           ),
         ],
       ),
