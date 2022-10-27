@@ -1,3 +1,1 @@
-List signupMainImages = <String>[];
 
-// class
