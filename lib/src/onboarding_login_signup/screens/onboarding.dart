@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mova/src/onboarding_login_signup/screens/signin_main.dart';
 import 'package:mova/src/onboarding_login_signup/widgets/onboarding_signup_widgets.dart';
 import 'package:mova/src/onboarding_login_signup/view_model/onboarding_viewmodel.dart';
+import 'package:mova/utils/navigators.dart';
+import 'package:mova/utils/strings.dart';
+import 'package:mova/utils/images.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -49,12 +52,7 @@ class _OnboardingState extends State<Onboarding> {
             title: OnboardingStrings.titleThree,
             text: OnboardingStrings.textThree,
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const SignupMain(),
-                ),
-              );
+              navigateToPage(context, const SignupMain());
             },
             buttonText: OnboardingStrings.buttonTextThree,
           ),
