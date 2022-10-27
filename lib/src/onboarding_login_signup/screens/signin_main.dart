@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mova/src/onboarding_login_signup/screens/signup.dart';
 import 'package:mova/src/onboarding_login_signup/widgets/onboarding_signup_widgets.dart';
+import 'package:mova/utils/images.dart';
+import 'package:mova/utils/navigators.dart';
+import 'package:mova/utils/strings.dart';
 
 class SignupMain extends StatefulWidget {
   const SignupMain({super.key});
@@ -28,13 +31,13 @@ class _SignupMainState extends State<SignupMain> {
           children: [
             Center(
               child: Image.asset(
-                'assets/images/logo_two.png',
+                SignUpImages.logo,
                 fit: BoxFit.cover,
-                width: MediaQuery.of(context).size.width / 2,
+                width: MediaQuery.of(context).size.width / 3,
               ),
             ),
             const Text(
-              'Let\'s get you started',
+              SignUpMainStrings.startedString,
               style: TextStyle(
                 fontSize: 42.0,
                 fontWeight: FontWeight.bold,
@@ -42,35 +45,30 @@ class _SignupMainState extends State<SignupMain> {
               textAlign: TextAlign.center,
             ),
             WLogButton(
-              icon: 'assets/icons/fb_icon.png',
-              text: 'Continue with Facebook',
+              icon: SignUpImages.fbIcon,
+              text: SignUpMainStrings.fbButtonString,
               onPressed: () {},
             ),
             WLogButton(
-              icon: 'assets/icons/google_logo.png',
-              text: 'Continue with Google',
+              icon: SignUpImages.googleIcon,
+              text: SignUpMainStrings.googleButtonString,
               onPressed: () {},
             ),
             WLogButton(
-              icon: 'assets/icons/apple_logo.png',
-              text: 'Continue with Apple',
+              icon: SignUpImages.appleIcon,
+              text: SignUpMainStrings.appleButtonString,
               onPressed: () {},
             ),
             const WDivider(),
             WLargeButton(
               onPressed: () {},
-              buttonText: 'Sign in with Password',
+              buttonText: SignUpMainStrings.buttonString,
             ),
             WTextSpan(
-              textOne: 'Don\'t have an account ',
-              textTwo: 'Sign up',
+              textOne: SignUpMainStrings.altTextOneString,
+              textTwo: SignUpMainStrings.altTextTwoString,
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SignUp(),
-                  ),
-                );
+                navigateToPage(context, const SignUp());
               },
             )
           ],

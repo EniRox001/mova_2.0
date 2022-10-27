@@ -30,31 +30,31 @@ class _OnboardingState extends State<Onboarding> {
         children: [
           OnboardingWidget(
             controller: controller,
-            image: onboardingImages[0],
-            title: OnboardingStrings.titleOne,
-            text: OnboardingStrings.textOne,
+            image: OnboardingImages.imageOne,
+            title: OnboardingStrings.titleOneString,
+            text: OnboardingStrings.textOneString,
             onPressed: () => toNextPage(controller),
-            buttonText: OnboardingStrings.buttonTextOne,
+            buttonText: OnboardingStrings.buttonOneString,
           ),
           OnboardingWidget(
             controller: controller,
-            image: onboardingImages[1],
-            title: OnboardingStrings.titleTwo,
-            text: OnboardingStrings.textTwo,
+            image: OnboardingImages.imageTwo,
+            title: OnboardingStrings.titleTwoString,
+            text: OnboardingStrings.textTwoString,
             onPressed: () {
               toNextPage(controller);
             },
-            buttonText: OnboardingStrings.buttonTextTwo,
+            buttonText: OnboardingStrings.buttonTwoString,
           ),
           OnboardingWidget(
             controller: controller,
-            image: onboardingImages[2],
-            title: OnboardingStrings.titleThree,
-            text: OnboardingStrings.textThree,
+            image: OnboardingImages.imageThree,
+            title: OnboardingStrings.titleThreeString,
+            text: OnboardingStrings.textThreeString,
             onPressed: () {
               navigateToPage(context, const SignupMain());
             },
-            buttonText: OnboardingStrings.buttonTextThree,
+            buttonText: OnboardingStrings.buttonThreeString,
           ),
         ],
       ),
