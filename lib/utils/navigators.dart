@@ -8,3 +8,7 @@ navigateToPage(context, page) {
     ),
   );
 }
+
+navigateBack(context) {
+  Navigator.pop(context);
+}

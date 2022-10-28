@@ -30,10 +30,23 @@ class SignUpStrings {
   SignUpStrings._();
   static const String createString = 'Create Your Account';
   static const String emailHintString = 'Email';
-  static const String passwordString = 'Password';
+  static const String passwordHintString = 'Password';
   static const String rememberString = 'Remember Me';
   static const String buttonString = 'Sign up';
   static const String dividerString = 'or continue with';
   static const String altTextOneString = 'Already have an account? ';
   static const String altTextTwoString = 'Sign in';
+}
+
+class SignInStrings {
+  SignInStrings._();
+  static const String loginString = 'Login to Your Account';
+  static const String emailHintString = 'Email';
+  static const String passwordHintString = 'Password';
+  static const String rememberString = 'Remember Me';
+  static const String buttonString = 'Sign in';
+  static const String forgotPasswordString = 'Forgot the password?';
+  static const String dividerString = 'or continue with';
+  static const String altTextOneString = 'Don\'t have an account? ';
+  static const String altTextTwoString = 'Sign up';
 }

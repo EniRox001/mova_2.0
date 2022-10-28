@@ -5,7 +5,6 @@ import 'package:mova/utils/images.dart';
 import 'package:mova/utils/navigators.dart';
 import 'package:mova/utils/spacings.dart';
 import 'package:mova/utils/strings.dart';
-import 'package:mova/src/onboarding_login_signup/widgets/signup_widgets.dart';
 
 class SignupMain extends StatefulWidget {
   const SignupMain({super.key});

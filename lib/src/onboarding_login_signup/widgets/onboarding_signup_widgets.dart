@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mova/utils/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:flutter/gestures.dart';
+import 'package:mova/utils/images.dart';
 
 class OnboardingWidget extends StatelessWidget {
   const OnboardingWidget({
@@ -120,6 +122,284 @@ class WLargeButton extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class WLogButton extends StatelessWidget {
+  const WLogButton({
+    Key? key,
+    required this.icon,
+    required this.text,
+    required this.onPressed,
+  }) : super(key: key);
+
+  final String icon;
+  final String text;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+          elevation: 0,
+          backgroundColor: CustomColors.fadedDarkColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+              16.0,
+            ),
+          ),
+          side: const BorderSide(
+            color: CustomColors.fadedLightColor,
+          )),
+      child: Padding(
+        padding: const EdgeInsets.all(14.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              icon,
+              scale: 1.6,
+            ),
+            const SizedBox(width: 10.0),
+            Text(
+              text,
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class WTextSpan extends StatelessWidget {
+  const WTextSpan({
+    Key? key,
+    required this.textOne,
+    required this.textTwo,
+    required this.onPressed,
+  }) : super(key: key);
+
+  final String textOne;
+  final String textTwo;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        children: [
+          TextSpan(text: textOne, style: Theme.of(context).textTheme.subtitle2),
+          TextSpan(
+            text: textTwo,
+            style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                  color: CustomColors.mainRedColor,
+                ),
+            recognizer: TapGestureRecognizer()..onTap = onPressed,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class WDivider extends StatelessWidget {
+  const WDivider({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        const Expanded(
+            child: Divider(
+          thickness: 1.2,
+          color: CustomColors.darkerDarkColor,
+        )),
+        const SizedBox(width: 20.0),
+        Text(
+          text,
+          style: Theme.of(context).textTheme.subtitle2,
+        ),
+        const SizedBox(width: 20.0),
+        const Expanded(
+          child: Divider(
+            thickness: 1.2,
+            color: CustomColors.darkerDarkColor,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class WLogButtonSmall extends StatelessWidget {
+  const WLogButtonSmall({
+    Key? key,
+    required this.onPressed,
+    required this.icon,
+  }) : super(key: key);
+
+  final VoidCallback onPressed;
+  final String icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: CustomColors.fadedDarkColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        side: const BorderSide(color: CustomColors.fadedLightColor, width: 1.0),
+      ),
+      onPressed: onPressed,
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Image.asset(
+          icon,
+          scale: 1.5,
+        ),
+      ),
+    );
+  }
+}
+
+class WRememberMe extends StatelessWidget {
+  const WRememberMe({
+    Key? key,
+    required this.isChecked,
+    required this.text,
+    required this.onChanged,
+  }) : super(key: key);
+
+  final bool isChecked;
+  final String text;
+  final void Function(bool?) onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Checkbox(
+          value: isChecked,
+          onChanged: onChanged,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+              5.0,
+            ),
+          ),
+          checkColor: CustomColors.mainLightColor,
+          activeColor: CustomColors.mainRedColor,
+          side: const BorderSide(
+            color: CustomColors.mainRedColor,
+            width: 2.5,
+          ),
+        ),
+        Text(
+          text,
+          style: Theme.of(context).textTheme.bodyText1,
+        )
+      ],
+    );
+  }
+}
+
+class WInputField extends StatelessWidget {
+  const WInputField({
+    Key? key,
+    required this.prefix,
+    required this.hintText,
+    this.suffixIcon = Icons.nat,
+  }) : super(key: key);
+
+  final IconData prefix;
+  final String hintText;
+  final IconData suffixIcon;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      cursorColor: CustomColors.darkerLightColor,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: CustomColors.fadedDarkColor,
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: CustomColors.mainRedColor,
+            width: 1.0,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.transparent,
+            width: 1.0,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        prefixIcon: Icon(
+          prefix,
+          color: CustomColors.darkerLightColor,
+        ),
+        suffixIcon: suffixIcon == Icons.nat
+            ? const SizedBox()
+            : Icon(
+                suffixIcon,
+                color: CustomColors.darkerLightColor,
+              ),
+        hintText: hintText,
+        hintStyle: const TextStyle(
+          color: CustomColors.darkerLightColor,
+        ),
+      ),
+    );
+  }
+}
+
+class WForgotPassword extends StatelessWidget {
+  const WForgotPassword({
+    Key? key,
+    required this.onPressed,
+    required this.text,
+  }) : super(key: key);
+
+  final VoidCallback onPressed;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Text(
+        text,
+        style: Theme.of(context).textTheme.bodyText1!.copyWith(
+              color: CustomColors.mainRedColor,
+            ),
+      ),
+    );
+  }
+}
+
+class WMovaLogo extends StatelessWidget {
+  const WMovaLogo({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Image.asset(
+        LogoImages.mainImage,
+        scale: 0.6,
       ),
     );
   }

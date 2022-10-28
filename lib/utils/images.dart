@@ -13,7 +13,7 @@ class ButtonImages {
   static const appleIcon = 'assets/icons/apple_logo.png';
 }
 
-class SignupImages {
-  SignupImages._();
+class LogoImages {
+  LogoImages._();
   static const mainImage = 'assets/images/logo.png';
 }
