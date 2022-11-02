@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mova/src/account_setup/screens/choose_interest.dart';
 import 'package:mova/src/onboarding_login_signup/widgets/onboarding_signup_widgets.dart';
 import 'package:mova/utils/images.dart';
 import 'package:mova/utils/navigators.dart';
@@ -43,7 +44,9 @@ class _SignInState extends State<SignIn> {
               },
             ),
             WLargeButton(
-              onPressed: () {},
+              onPressed: () {
+                navigateToPage(context, const ChooseInterest());
+              },
               buttonText: SignInStrings.buttonString,
             ),
             WForgotPassword(
