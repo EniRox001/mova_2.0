@@ -50,3 +50,18 @@ class SignInStrings {
   static const String altTextOneString = 'Don\'t have an account? ';
   static const String altTextTwoString = 'Sign up';
 }
+
+class ChooseInterestStrings {
+  ChooseInterestStrings._();
+  static const String titleString = 'Choose Your Interest';
+  static const String bodyTextString =
+      'Choose your interests and get the best movie recommendations. Don\'t worry, You can always change it later';
+  static const String skipButtonString = 'Skip';
+  static const String continueButtonString = 'Continue';
+}
+
+extension StringExtension on String {
+  String capitalize() {
+    return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
+  }
+}

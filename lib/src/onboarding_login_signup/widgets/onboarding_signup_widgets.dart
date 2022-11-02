@@ -99,18 +99,19 @@ class WLargeButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     required this.buttonText,
+    this.color = CustomColors.mainRedColor,
   }) : super(key: key);
 
   final VoidCallback onPressed;
   final String buttonText;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-          backgroundColor: CustomColors.mainRedColor,
-          shape: const StadiumBorder()),
+          backgroundColor: color, shape: const StadiumBorder()),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
