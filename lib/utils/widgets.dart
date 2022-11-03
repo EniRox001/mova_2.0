@@ -314,6 +314,49 @@ class WRememberMe extends StatelessWidget {
   }
 }
 
+class WStockInputField extends StatelessWidget {
+  const WStockInputField(
+      {super.key, required this.hintText, this.suffixIcon = Icons.nat});
+
+  final String hintText;
+  final IconData suffixIcon;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      cursorColor: CustomColors.darkerLightColor,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: CustomColors.fadedDarkColor,
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: CustomColors.mainRedColor,
+            width: 1.0,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.transparent,
+            width: 1.0,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        suffixIcon: suffixIcon == Icons.nat
+            ? const SizedBox()
+            : Icon(
+                suffixIcon,
+                color: CustomColors.darkerLightColor,
+              ),
+        hintText: hintText,
+        hintStyle: const TextStyle(
+          color: CustomColors.darkerLightColor,
+        ),
+      ),
+    );
+  }
+}
+
 class WInputField extends StatelessWidget {
   const WInputField({
     Key? key,

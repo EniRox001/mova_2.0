@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mova/src/account_setup/screens/fill_profile.dart';
 import 'package:mova/src/account_setup/view_model/choose_interest_viewmodel.dart';
-import 'package:mova/src/onboarding_login_signup/widgets/onboarding_signup_widgets.dart';
+import 'package:mova/utils/widgets.dart';
 import 'package:mova/utils/colors.dart';
 import 'package:mova/utils/navigators.dart';
 import 'package:mova/utils/strings.dart';
