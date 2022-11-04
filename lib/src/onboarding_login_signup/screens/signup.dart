@@ -23,7 +23,7 @@ class _SignUpState extends State<SignUp> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(),
       body: Padding(
-        padding: Pad.padLarge,
+        padding: Pad.padMid,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,

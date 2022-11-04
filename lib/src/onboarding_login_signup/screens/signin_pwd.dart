@@ -22,7 +22,7 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: Pad.padLarge,
+        padding: Pad.padMid,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

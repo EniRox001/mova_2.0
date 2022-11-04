@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mova/src/account_setup/screens/fill_profile.dart';
 import 'package:mova/src/account_setup/view_model/choose_interest_viewmodel.dart';
+import 'package:mova/utils/spacings.dart';
 import 'package:mova/utils/widgets.dart';
 import 'package:mova/utils/colors.dart';
 import 'package:mova/utils/navigators.dart';
@@ -31,7 +32,7 @@ class _ChooseInterestState extends State<ChooseInterest> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: Pad.padMid,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

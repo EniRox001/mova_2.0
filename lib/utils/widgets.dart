@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mova/utils/colors.dart';
+import 'package:mova/utils/spacings.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:mova/utils/images.dart';
@@ -51,7 +52,7 @@ class OnboardingWidget extends StatelessWidget {
           ),
           child: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(32.0),
+              padding: Pad.padMid,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

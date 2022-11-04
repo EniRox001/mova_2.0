@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mova/utils/colors.dart';
+import 'package:mova/utils/spacings.dart';
 import 'package:mova/utils/strings.dart';
 import 'package:mova/utils/widgets.dart';
 import 'package:mova/src/account_setup/view_model/fill_profile_viewmodel.dart';
@@ -26,7 +27,7 @@ class _FillProfileState extends State<FillProfile> {
         title: const Text(FillProfileStrings.titleString),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: Pad.padMid,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

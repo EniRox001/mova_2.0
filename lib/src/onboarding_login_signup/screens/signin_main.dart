@@ -19,7 +19,7 @@ class _SignupMainState extends State<SignupMain> {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: Pad.padLarge,
+        padding: Pad.padMid,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
