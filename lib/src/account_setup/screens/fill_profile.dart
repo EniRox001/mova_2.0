@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mova/src/forgotPassword_resetPassword/screens/forgot_password_selection.dart';
+import 'package:mova/src/home_action_menu/screens/home_screen.dart';
 import 'package:mova/utils/colors.dart';
+import 'package:mova/utils/navigators.dart';
 import 'package:mova/utils/spacings.dart';
 import 'package:mova/utils/strings.dart';
 import 'package:mova/utils/widgets.dart';
@@ -59,7 +62,16 @@ class _FillProfileState extends State<FillProfile> {
               children: [
                 Expanded(
                   child: WLargeButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      mShowCongratulations(context);
+                      Future.delayed(
+                        const Duration(seconds: 3),
+                        () => navigateToPage(
+                          context,
+                          const HomeScreen(),
+                        ),
+                      );
+                    },
                     buttonText: FillProfileStrings.skipButtonString,
                     color: CustomColors.darkerLightColor,
                   ),
@@ -71,6 +83,13 @@ class _FillProfileState extends State<FillProfile> {
                   child: WLargeButton(
                     onPressed: () {
                       mShowCongratulations(context);
+                      Future.delayed(
+                        const Duration(seconds: 3),
+                        () => navigateToPage(
+                          context,
+                          const HomeScreen(),
+                        ),
+                      );
                     },
                     buttonText: FillProfileStrings.continueButtonString,
                   ),

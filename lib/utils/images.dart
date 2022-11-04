@@ -17,3 +17,14 @@ class LogoImages {
   LogoImages._();
   static const mainImage = 'assets/images/logo.png';
 }
+
+class CongratulationPopupImages {
+  CongratulationPopupImages._();
+  static const congratsImage = 'assets/images/congratulation_icon.png';
+}
+
+class ForgotPasswordImages {
+  ForgotPasswordImages._();
+  static const forgotPasswordImageTwo = 'assets/images/forgot_password_one.png';
+  static const forgotPasswordImageOne = 'assets/images/forgot_password_two.png';
+}

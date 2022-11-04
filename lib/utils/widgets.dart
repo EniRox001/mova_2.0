@@ -6,6 +6,7 @@ import 'package:flutter/gestures.dart';
 import 'package:mova/utils/images.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:intl_phone_field/country_picker_dialog.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
 class OnboardingWidget extends StatelessWidget {
   const OnboardingWidget({
@@ -204,6 +205,38 @@ class WTextSpan extends StatelessWidget {
                 ),
             recognizer: TapGestureRecognizer()..onTap = onPressed,
           )
+        ],
+      ),
+    );
+  }
+}
+
+class WTextSpanExt extends StatelessWidget {
+  const WTextSpanExt({
+    Key? key,
+    required this.textOne,
+    required this.textTwo,
+    required this.textThree,
+  }) : super(key: key);
+
+  final String textOne;
+  final String textTwo;
+  final String textThree;
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        children: [
+          TextSpan(text: textOne, style: Theme.of(context).textTheme.subtitle2),
+          TextSpan(
+            text: textTwo,
+            style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                  color: CustomColors.mainRedColor,
+                ),
+          ),
+          TextSpan(
+              text: textThree, style: Theme.of(context).textTheme.subtitle2),
         ],
       ),
     );
@@ -567,6 +600,42 @@ class WPhoneNumberField extends StatelessWidget {
       ),
       initialCountryCode: 'NG',
       onChanged: (phone) {},
+    );
+  }
+}
+
+class WPinCodeField extends StatelessWidget {
+  const WPinCodeField({
+    Key? key,
+    required this.controller,
+    required this.onChanged,
+  }) : super(key: key);
+
+  final TextEditingController controller;
+  final Function(String) onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return PinCodeTextField(
+      enableActiveFill: true,
+      controller: controller,
+      appContext: context,
+      length: 4,
+      onChanged: onChanged,
+      pinTheme: PinTheme(
+        shape: PinCodeFieldShape.box,
+        borderRadius: BorderRadius.circular(
+          10.0,
+        ),
+        fieldHeight: 50.0,
+        fieldWidth: 60.0,
+        activeColor: Colors.transparent,
+        inactiveColor: Colors.transparent,
+        inactiveFillColor: CustomColors.fadedDarkColor,
+        selectedFillColor: CustomColors.fadedRedColor,
+        selectedColor: CustomColors.mainRedColor,
+        activeFillColor: CustomColors.fadedDarkColor,
+      ),
     );
   }
 }

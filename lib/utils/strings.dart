@@ -78,6 +78,38 @@ class SignUpCompletedPopupStrings {
       'Your account is ready to use. You will be redirected to Home page in a few seconds';
 }
 
+class ForgotPasswordSelectionStrings {
+  ForgotPasswordSelectionStrings._();
+  static const String titleString = 'Forgot Password';
+  static const String textString =
+      'Select which password details should we use to reset your password';
+  static const String smsTitle = 'via SMS:';
+  static const String smsText = '+234 81 ******58';
+  static const String emailTitle = 'via Email:';
+  static const String emailText = 'en****@gmail.com';
+  static const String continueButtonString = 'Continue';
+}
+
+class ForgotPasswordPinStrings {
+  ForgotPasswordPinStrings._();
+  static const String titleString = 'Forgot Password';
+  static const String textString = 'Code has been sent to';
+  static const String resendCodeStringOne = 'Resend code in ';
+  static const String resendCodeStringTwo = '55';
+  static const String resendCodeStringThree = ' s';
+  static const String verifyButtonText = 'Verify';
+}
+
+class CreateNewPasswordStrings {
+  CreateNewPasswordStrings._();
+  static const String titleString = 'Create New Password';
+  static const String textString = 'Create Your New Password';
+  static const String passwordHintString = 'Enter new password';
+  static const String confirmPasswordHintString = 'Confirm new password';
+  static const String rememberString = 'Remember me';
+  static const String continueButtonString = 'Continue';
+}
+
 extension StringExtension on String {
   String capitalize() {
     return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
