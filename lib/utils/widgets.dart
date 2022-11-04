@@ -3,6 +3,8 @@ import 'package:mova/utils/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:mova/utils/images.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:intl_phone_field/country_picker_dialog.dart';
 
 class OnboardingWidget extends StatelessWidget {
   const OnboardingWidget({
@@ -316,14 +318,19 @@ class WRememberMe extends StatelessWidget {
 
 class WStockInputField extends StatelessWidget {
   const WStockInputField(
-      {super.key, required this.hintText, this.suffixIcon = Icons.nat});
+      {super.key,
+      required this.controller,
+      required this.hintText,
+      this.suffixIcon = Icons.nat});
 
+  final TextEditingController controller;
   final String hintText;
   final IconData suffixIcon;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       cursorColor: CustomColors.darkerLightColor,
       decoration: InputDecoration(
         filled: true,
@@ -360,11 +367,13 @@ class WStockInputField extends StatelessWidget {
 class WInputField extends StatelessWidget {
   const WInputField({
     Key? key,
+    required this.controller,
     required this.prefix,
     required this.hintText,
     this.suffixIcon = Icons.nat,
   }) : super(key: key);
 
+  final TextEditingController controller;
   final IconData prefix;
   final String hintText;
   final IconData suffixIcon;
@@ -372,6 +381,7 @@ class WInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       cursorColor: CustomColors.darkerLightColor,
       decoration: InputDecoration(
         filled: true,
@@ -445,6 +455,117 @@ class WMovaLogo extends StatelessWidget {
         LogoImages.mainImage,
         scale: 0.6,
       ),
+    );
+  }
+}
+
+class WImageWIdget extends StatelessWidget {
+  const WImageWIdget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: const CircleAvatar(
+        backgroundColor: CustomColors.fadedDarkColor,
+        radius: 50.0,
+        child: Icon(
+          Icons.person,
+          color: CustomColors.mainDarkColor,
+          size: 50,
+        ),
+      ),
+    );
+  }
+}
+
+class WDropdownWidget extends StatelessWidget {
+  const WDropdownWidget({
+    Key? key,
+    required this.dropdownValue,
+    required this.genders,
+    required this.onPressed,
+  }) : super(key: key);
+
+  final String dropdownValue;
+  final List<String> genders;
+  final void Function(String?)? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(3.0),
+      decoration: BoxDecoration(
+          color: CustomColors.fadedDarkColor,
+          borderRadius: BorderRadius.circular(10.0)),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: DropdownButton(
+            borderRadius: BorderRadius.circular(20.0),
+            underline: const SizedBox(),
+            isExpanded: true,
+            dropdownColor: Colors.black,
+            value: dropdownValue,
+            icon: const Icon(Icons.expand_more),
+            items: genders.map((String genders) {
+              return DropdownMenuItem(
+                value: genders,
+                child: Text(genders),
+              );
+            }).toList(),
+            onChanged: onPressed),
+      ),
+    );
+  }
+}
+
+class WPhoneNumberField extends StatelessWidget {
+  const WPhoneNumberField({
+    Key? key,
+    required this.controller,
+    required this.hintText,
+  }) : super(key: key);
+
+  final TextEditingController controller;
+  final String hintText;
+
+  @override
+  Widget build(BuildContext context) {
+    return IntlPhoneField(
+      controller: controller,
+      flagsButtonMargin: const EdgeInsets.only(left: 24.0),
+      dropdownIconPosition: IconPosition.trailing,
+      dropdownIcon:
+          const Icon(Icons.expand_more, color: CustomColors.darkerLightColor),
+      dropdownTextStyle: const TextStyle(color: CustomColors.darkerLightColor),
+      pickerDialogStyle:
+          PickerDialogStyle(backgroundColor: CustomColors.fadedDarkColor),
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: CustomColors.fadedDarkColor,
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: CustomColors.mainRedColor,
+            width: 1.0,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.transparent,
+            width: 1.0,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        hintText: hintText,
+        hintStyle: const TextStyle(
+          color: CustomColors.darkerLightColor,
+        ),
+      ),
+      initialCountryCode: 'NG',
+      onChanged: (phone) {},
     );
   }
 }

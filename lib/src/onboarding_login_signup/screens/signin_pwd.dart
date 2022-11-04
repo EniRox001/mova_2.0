@@ -15,6 +15,8 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   bool isChecked = false;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,10 +32,14 @@ class _SignInState extends State<SignIn> {
               style: Theme.of(context).textTheme.headline4,
               textAlign: TextAlign.center,
             ),
-            const WInputField(
-                prefix: Icons.email, hintText: SignInStrings.emailHintString),
-            const WInputField(
-                prefix: Icons.lock, hintText: SignInStrings.passwordHintString),
+            WInputField(
+                controller: emailController,
+                prefix: Icons.email,
+                hintText: SignInStrings.emailHintString),
+            WInputField(
+                controller: passwordController,
+                prefix: Icons.lock,
+                hintText: SignInStrings.passwordHintString),
             WRememberMe(
               isChecked: isChecked,
               text: SignInStrings.rememberString,

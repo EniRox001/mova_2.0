@@ -14,7 +14,9 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  bool isChecked = true;
+  bool isChecked = false;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,11 +34,13 @@ class _SignUpState extends State<SignUp> {
               style: Theme.of(context).textTheme.headline4,
               textAlign: TextAlign.center,
             ),
-            const WInputField(
+            WInputField(
+              controller: emailController,
               prefix: Icons.email,
               hintText: SignUpStrings.emailHintString,
             ),
-            const WInputField(
+            WInputField(
+              controller: passwordController,
               prefix: Icons.lock,
               hintText: SignUpStrings.passwordHintString,
             ),

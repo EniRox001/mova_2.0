@@ -60,6 +60,24 @@ class ChooseInterestStrings {
   static const String continueButtonString = 'Continue';
 }
 
+class FillProfileStrings {
+  FillProfileStrings._();
+  static const String titleString = 'Fill Your Profile';
+  static const String fullNameHintString = 'Full Name';
+  static const String nickNameHintString = 'Nickname';
+  static const String emailHintString = 'Email';
+  static const String phoneNumberHintString = 'Phone Number';
+  static const String skipButtonString = 'Skip';
+  static const String continueButtonString = 'Continue';
+}
+
+class SignUpCompletedPopupStrings {
+  SignUpCompletedPopupStrings._();
+  static const String titleString = 'Congratulatins';
+  static const String textString =
+      'Your account is ready to use. You will be redirected to Home page in a few seconds';
+}
+
 extension StringExtension on String {
   String capitalize() {
     return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
