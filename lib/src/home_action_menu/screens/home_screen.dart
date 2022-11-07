@@ -1,7 +1,10 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:mova/utils/colors.dart';
 import 'package:mova/utils/images.dart';
 import 'package:mova/utils/spacings.dart';
+import 'package:mova/src/home_action_menu/models/movie_models.dart';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,6 +14,21 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late Future<List<Movie>> moviesFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    moviesFuture = getMovies(context);
+  }
+
+  static Future<List<Movie>> getMovies(BuildContext context) async {
+    final assetBundle = DefaultAssetBundle.of(context);
+    final data = await assetBundle.loadString('assets/json/movies.json');
+    final movieData = json.decode(data);
+    return movieData.map<Movie>(Movie.fromJson).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,11 +36,15 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Stack(
             children: [
-              Image.network(
-                'https://www.gamespot.com/a/uploads/original/1597/15976769/3964026-sv_specialod_72x48_strange_v2_lg.jpg',
+              FancyShimmerImage(
+                imageUrl:
+                    'https://www.gamespot.com/a/uploads/original/1597/15976769/3964026-sv_specialod_72x48_strange_v2_lg.jpg',
+                shimmerBaseColor: CustomColors.fadedDarkColor,
+                shimmerHighlightColor: CustomColors.fadedRedColor,
+                shimmerBackColor: CustomColors.mainRedColor,
                 height: MediaQuery.of(context).size.height / 2.5,
                 width: MediaQuery.of(context).size.width,
-                fit: BoxFit.cover,
+                boxFit: BoxFit.cover,
               ),
               SafeArea(
                 child: Padding(
@@ -102,6 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Expanded(
             child: ListView(
+              shrinkWrap: true,
               padding: Pad.padMid,
               children: [
                 Row(
@@ -123,9 +146,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 SizedBox(
-                  height: 150.0,
-                  child: ListView(),
-                )
+                  height: 180.0,
+                  child: FutureBuilder<List<Movie>>(
+                      future: moviesFuture,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          final movies = snapshot.data!;
+                          return buildMovies(movies);
+                        } else {
+                          return const Text('no movie data');
+                        }
+                      }),
+                ),
               ],
             ),
           ),
@@ -169,3 +201,46 @@ class WChipButton extends StatelessWidget {
     );
   }
 }
+
+Widget buildMovies(List<Movie> movies) => ListView.separated(
+      scrollDirection: Axis.horizontal,
+      itemBuilder: (context, index) {
+        final movie = movies[index];
+        return Container(
+          width: 130.0,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            image: DecorationImage(
+              image: NetworkImage(
+                movie.imageLink,
+              ),
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15.0,
+                  vertical: 10.0,
+                ),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: CustomColors.mainRedColor,
+                      borderRadius: BorderRadius.circular(5.0)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(movie.ratings.toString()),
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      },
+      separatorBuilder: (context, index) => const SizedBox(
+        width: 10.0,
+      ),
+      itemCount: movies.length,
+    );

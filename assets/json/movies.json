@@ -1,11 +1,50 @@
-{
-    "id": 0,
-    "name": "Dr Strange 2",
-    "imageLink": "https://www.gamespot.com/a/uploads/original/1597/15976769/3964026-sv_specialod_72x48_strange_v2_lg.jpg",
-    "tags": [
-        "action",
-        "superhero",
-        "science fiction"
-    ],
-    "playLink": "www.nairaland.com"
-}
+[
+    {
+        "id": 0,
+        "name": "Dr Strange 2",
+        "imageLink": "https://www.gamespot.com/a/uploads/original/1597/15976769/3964026-sv_specialod_72x48_strange_v2_lg.jpg",
+        "tags": [
+            "action",
+            "superhero",
+            "science fiction"
+        ],
+        "ratings": 5.0,
+        "playLink": "www.nairaland.com"
+    },
+    {
+        "id": 0,
+        "name": "Dr Strange",
+        "imageLink": "https://www.gamespot.com/a/uploads/original/1597/15976769/3964026-sv_specialod_72x48_strange_v2_lg.jpg",
+        "tags": [
+            "action",
+            "superhero",
+            "science fiction"
+        ],
+        "ratings": 5.0,
+        "playLink": "www.nairaland.com"
+    },
+    {
+        "id": 0,
+        "name": "Dr Strange 2",
+        "imageLink": "https://www.gamespot.com/a/uploads/original/1597/15976769/3964026-sv_specialod_72x48_strange_v2_lg.jpg",
+        "tags": [
+            "action",
+            "superhero",
+            "science fiction"
+        ],
+        "ratings": 5.0,
+        "playLink": "www.nairaland.com"
+    },
+    {
+        "id": 0,
+        "name": "Dr Strange 2",
+        "imageLink": "https://www.gamespot.com/a/uploads/original/1597/15976769/3964026-sv_specialod_72x48_strange_v2_lg.jpg",
+        "tags": [
+            "action",
+            "superhero",
+            "science fiction"
+        ],
+        "ratings": 5.0,
+        "playLink": "www.nairaland.com"
+    }
+]

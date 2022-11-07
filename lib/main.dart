@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:mova/src/home_action_menu/screens/home_screen.dart';
 import 'package:mova/src/onboarding_login_signup/screens/onboarding.dart';
 import 'package:mova/utils/colors.dart';
 
@@ -35,8 +36,7 @@ class Mova extends StatelessWidget {
         textTheme: ThemeData.dark().textTheme,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/onboarding',
-      routes: {'/onboarding': (context) => const Onboarding()},
+      home: const HomeScreen(),
     );
   }
 }
