@@ -206,38 +206,29 @@ Widget buildMovies(List<Movie> movies) => ListView.separated(
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {
         final movie = movies[index];
-        return Container(
-          width: 130.0,
-          decoration: BoxDecoration(
+        return Stack(children: [
+          ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
-            image: DecorationImage(
-              image: NetworkImage(
-                movie.imageLink,
-              ),
+            child: FancyShimmerImage(
+              width: 130.0,
+              imageUrl: movie.imageLink,
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 15.0,
-                  vertical: 10.0,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.0),
+                  color: CustomColors.mainRedColor),
+              child: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Text(
+                  movie.ratings.toString(),
                 ),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: CustomColors.mainRedColor,
-                      borderRadius: BorderRadius.circular(5.0)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Text(movie.ratings.toString()),
-                  ),
-                ),
-              )
-            ],
-          ),
-        );
+              ),
+            ),
+          )
+        ]);
       },
       separatorBuilder: (context, index) => const SizedBox(
         width: 10.0,
