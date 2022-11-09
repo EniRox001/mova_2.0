@@ -43,6 +43,7 @@ dependencies:
   pin_code_fields: ^7.4.0
   shimmer: ^2.0.0
   fancy_shimmer_image: ^2.0.2
+  mongo_dart: ^0.8.0
   
 
 dev_dependencies:

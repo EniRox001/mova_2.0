@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mova/src/forgotPassword_resetPassword/screens/forgot_password_pin.dart';
+import 'package:mova/features/forgotPassword_resetPassword/screens/forgot_password_pin.dart';
 import 'package:mova/utils/colors.dart';
 import 'package:mova/utils/images.dart';
 import 'package:mova/utils/navigators.dart';

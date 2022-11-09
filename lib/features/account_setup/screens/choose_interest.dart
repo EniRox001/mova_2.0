@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mova/src/account_setup/screens/fill_profile.dart';
-import 'package:mova/src/account_setup/view_model/choose_interest_viewmodel.dart';
+import 'package:mova/features/account_setup/screens/fill_profile.dart';
+import 'package:mova/features/account_setup/view_model/choose_interest_viewmodel.dart';
 import 'package:mova/utils/spacings.dart';
 import 'package:mova/utils/widgets.dart';
 import 'package:mova/utils/colors.dart';

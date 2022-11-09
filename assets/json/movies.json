@@ -1,44 +1,35 @@
 [
     {
         "id": 0,
-        "name": "Dr Strange 2",
-        "imageLink": "https://www.gamespot.com/a/uploads/original/1597/15976769/3964026-sv_specialod_72x48_strange_v2_lg.jpg",
+        "name": "Thor Love and Thunder",
+        "imageLink": "https://fzmovies.net/imdb_images/Thor.Love.and.Thunder.2022.jpg",
         "tags": [
             "action",
             "superhero",
-            "science fiction"
+            "science fiction",
+            "adventure",
+            "comedy",
+            "fantasy",
+            "romance"
         ],
-        "ratings": 5.0,
+        "ratings": 3.2,
         "playLink": "www.nairaland.com"
     },
     {
         "id": 0,
-        "name": "Dr Strange",
-        "imageLink": "https://www.gamespot.com/a/uploads/original/1597/15976769/3964026-sv_specialod_72x48_strange_v2_lg.jpg",
+        "name": "One Piece Film Red",
+        "imageLink": "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/One_Piece_Film_Red_Visual_Poster.jpg/220px-One_Piece_Film_Red_Visual_Poster.jpg",
         "tags": [
             "action",
-            "superhero",
-            "science fiction"
+            "anime"
         ],
-        "ratings": 5.0,
-        "playLink": "www.nairaland.com"
-    },
-    {
-        "id": 0,
-        "name": "Dr Strange 2",
-        "imageLink": "https://www.gamespot.com/a/uploads/original/1597/15976769/3964026-sv_specialod_72x48_strange_v2_lg.jpg",
-        "tags": [
-            "action",
-            "superhero",
-            "science fiction"
-        ],
-        "ratings": 5.0,
+        "ratings": 7.0,
         "playLink": "www.nairaland.com"
     },
     {
         "id": 0,
         "name": "Dr Strange 2",
-        "imageLink": "https://www.gamespot.com/a/uploads/original/1597/15976769/3964026-sv_specialod_72x48_strange_v2_lg.jpg",
+        "imageLink": "https://fzmovies.net/imdb_images/Schindlers%20List.jpg",
         "tags": [
             "action",
             "superhero",

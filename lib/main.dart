@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:mova/src/home_action_menu/screens/home_screen.dart';
-import 'package:mova/src/onboarding_login_signup/screens/onboarding.dart';
+import 'package:mova/features/home_action_menu/screens/home_screen.dart';
+import 'package:mova/features/onboarding_login_signup/screens/onboarding.dart';
 import 'package:mova/utils/colors.dart';
 
 Future main() async {

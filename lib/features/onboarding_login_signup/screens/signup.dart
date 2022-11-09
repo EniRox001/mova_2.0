@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mova/src/onboarding_login_signup/screens/signin_pwd.dart';
+import 'package:mova/features/onboarding_login_signup/screens/signin_pwd.dart';
 import 'package:mova/utils/widgets.dart';
 import 'package:mova/utils/images.dart';
 import 'package:mova/utils/navigators.dart';

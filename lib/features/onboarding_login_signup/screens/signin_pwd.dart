@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mova/src/account_setup/screens/choose_interest.dart';
+import 'package:mova/features/account_setup/screens/choose_interest.dart';
 import 'package:mova/utils/widgets.dart';
 import 'package:mova/utils/images.dart';
 import 'package:mova/utils/navigators.dart';
